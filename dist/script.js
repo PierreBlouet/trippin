@@ -146,16 +146,10 @@ let ctx = canvas.getContext("2d");
 
 
 function resizeImage(image, size = IMAGE_SIZE) {
-	let newImage = image;
 	let {width, height} = image;
 	console.log(width,height)
-	let newWidth = size/width;
-	let newHeight = size/height;
-
-
 	ctx.drawImage(image, 0, 0); 
-
-	return ctx.getImageData(0,0,IMAGE_SIZE,IMAGE_SIZE*1.4);
+	return ctx.getImageData(0,0,IMAGE_SIZE,IMAGE_SIZE);
 }
 
 function makeThreeTexture(image) {
@@ -192,6 +186,7 @@ document.body.appendChild(renderer.domElement);
  
 function init(textures) {
 	let scene = new THREE.Scene();
+	scene.background = new THREE.Color( 0xff0000 );
 	let camera = new THREE.PerspectiveCamera(
 		45,
 		window.innerWidth / window.innerHeight,
@@ -202,7 +197,7 @@ function init(textures) {
 
 	scene.add(camera);
 
-	let geometry = new THREE.PlaneGeometry(4.75, 7, 4, 4);
+	let geometry = new THREE.PlaneGeometry(9, 9, 9, 9);
 
 	let material = new THREE.ShaderMaterial({
 		uniforms: {
@@ -268,11 +263,12 @@ function init(textures) {
 		camera.aspect = 1;
 		camera.updateProjectionMatrix();
 		//renderer.setPixelRatio(window.devicePixelRatio);
-		renderer.setSize(1000, 1000, false);
+		renderer.setSize(750, 750, false);
 	}
 
  	window.addEventListener("resize", resize);
 	
+	 
  	resize();
 	draw();
 	

@@ -21,7 +21,8 @@ canvas{
 	margin-right:auto;
 	outline: none; 
 	border: none;
-	margin-top:-75px;
+  margin-top: 25px;
+  opacity: 0.8;
 }
 
 img {
