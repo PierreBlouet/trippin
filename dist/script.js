@@ -262,8 +262,9 @@ function init(textures) {
 		//camera.aspect = window.innerWidth / window.innerHeight;
 		camera.aspect = 1;
 		camera.updateProjectionMatrix();
-		//renderer.setPixelRatio(window.devicePixelRatio);
-		renderer.setSize(750, 750, false);
+		// renderer.setPixelRatio(window.devicePixelRatio);
+		
+		renderer.setSize(window.innerHeight/1.5, window.innerHeight/1.5, false);
 	}
 
  	window.addEventListener("resize", resize);
