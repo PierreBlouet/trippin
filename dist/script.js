@@ -131,9 +131,7 @@ const files = [
 	"https://i.imgur.com/1mKmEzq",
 	"https://i.imgur.com/9xNY08W",
 	"https://i.imgur.com/VPkEED6",
-	"https://i.imgur.com/KVRlVUP",
-	"https://i.imgur.com/kFbF2iE",
-	"https://i.imgur.com/ENQKS9l"
+	"https://i.imgur.com/KVRlVUP"
 ];
 
 const ext = "jpg";
