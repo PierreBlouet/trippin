@@ -218,6 +218,7 @@ function init(textures) {
 	var tex2 = textures[0];
 	
 	function updateTexture(pos) {
+
 		if(tex2 != textures[Math.floor(pos / scrollPerImage)]) {
 			tex2 = textures[Math.floor(pos / scrollPerImage)]
 			material.uniforms.tex2.value = tex2;
@@ -241,8 +242,8 @@ function init(textures) {
 		if (scrollPos < 0) {
 			scrollPos = 0;
 		}
-		if (scrollPos > scrollPerImage * textures.length - 1) {
-			scrollPos = scrollPerImage * textures.length - 1;
+		if (scrollPos > scrollPerImage * textures.length - 0.5 * scrollPerImage) {
+			scrollPos = 0;
 		}
 		
 		if (scrollPos > 0 && scrollPos < scrollPerImage * textures.length - 1) {
